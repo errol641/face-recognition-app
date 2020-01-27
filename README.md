@@ -4,4 +4,4 @@ BACKEND SERVER: https://github.com/errol641/face-recognition-api
 ## HOW TO RUN
 
 1. Clone this repo.
-2. ### 'npm start'
+2. ### `npm start`
