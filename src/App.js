@@ -98,7 +98,7 @@ class App extends Component {
               // error occured while updating enteries
           })
         }
-    })
+      })
     .catch(err => {
         // face recognition API error
     });
