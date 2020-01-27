@@ -11,4 +11,4 @@ BACKEND SERVER: https://github.com/errol641/face-recognition-api
 ## CONFIGURATION
 
 This app uses localhost:3001 for the backend api requests.
-If you want to change it so you can deploy it on Heroku or something,open endpoints.js and change the URL
+If you want to change it so you can deploy it on Heroku or something, open `endpoints.js` and change the URL
