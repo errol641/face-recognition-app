@@ -8,6 +8,7 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import SignIn from './components/SignIn/SignIn';
 import Register from './components/Register/Register';
 import {particleOptions} from './ParticleOptions';
+import ENDPOINTS from './endpoints';
 import './App.css';
 
 const initialState = {
@@ -66,7 +67,7 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
 
     // Call API
-    fetch('https://agile-wildwood-28390.herokuapp.com/imageurl', {
+    fetch(ENDPOINTS.IMAGE_SUBMIT, {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -79,7 +80,7 @@ class App extends Component {
           this.displayBoundingBox(this.calculateFaceLocation(response));
           
           // Update enteries
-          fetch('https://agile-wildwood-28390.herokuapp.com/image', {
+          fetch(ENDPOINTS.UPDATE_SCORE, {
               method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -129,8 +130,8 @@ class App extends Component {
             </div>
           : (
               route === 'signin' 
-              ? <SignIn loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-              : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              ? <SignIn SIGN_IN={ENDPOINTS.SIGN_IN} loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+              : <Register REGISTER={ENDPOINTS.REGISTER} loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
             )
         }
       </div>
